@@ -177,10 +177,7 @@ span{
     margin-bottom: 1rem;
 }
 
-.skills{
 
-    background-color: var(--bg-color);
-}
 
 /********************about2***********************/
 .about2{
@@ -249,26 +246,13 @@ span{
     font-size: 22px;
     font-weight: 500;
 }
-.s-btnn{
-    margin-top: 20px;
-    display: inline-block;
-    padding: 10px;
-    background: var(--main-color);
-    color:var(--text-color);
-    font-size: 15px;
-    font-weight: 500;
-    border:2px solid var(--main-color);
-    border-radius: 2rem;
-    transition:all ease .50s;
-    width: 1000px;
-}
-.s-btnn:hover{
-    transform:scale(1.1);
-    background:transparent;
-    border: 2px solid var(--main-color);
-}
+
 /*********************Project section******************/
 .projects{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: var(--secont-bg-color);
 }
 .projects-item{
@@ -277,6 +261,7 @@ span{
     grid-template-columns:1fr 1fr 1fr;
     align-items: center;
     gap: 2.2rem;
+    justify-content: space-evenly;
     text-align: center;
     margin-top: 4rem;
 }
@@ -322,19 +307,21 @@ span{
     margin-bottom: 12px;
 }
 .s-btnn{
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px;
+    font-size: 1rem;
     text-align: center;
     width: fit-content;
     background: var(--main-color);
     color:var(--text-color);
-    font-size: 15px;
     font-weight: 500;
     border:2px solid var(--main-color);
     border-radius: 2rem;
     transition:all ease .50s;
-    margin-inline: 45%;
 }
 .s-btnn:hover{
-    transform:scale(1.1);
+    transform:scale(1.2);
     background:transparent;
     border: 2px solid var(--main-color);
 }
@@ -347,6 +334,9 @@ span{
     bottom: 90%;
     
 }
+.visit-me{
+    width: 200px;
+}
 /******************download resume********************/
 .resume{
     display: grid;
@@ -355,9 +345,9 @@ span{
     gap: 5rem;
 }
 
-.resume div img{
+.resume-img{
     height: 300px;
-   align-items: center;
+    align-items: center;
 
 }
 .right-resume h2{
@@ -392,6 +382,16 @@ span{
     line-height:30px;
 
 }
+
+
+.skills{
+    display: flex;
+    flex-direction: column;
+    
+    width: 100%;
+    background-color: var(--bg-color);
+}
+
 .skills-box{
     position: relative;
     padding-top: 20px;
@@ -412,6 +412,12 @@ span{
     display: flex;
     justify-content: start;
    
+}
+.buttonhu{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
 }
 .card-container{
     
@@ -451,7 +457,11 @@ span{
     z-index: 0;
  
 }
-
+.right-resume a{
+    font-size: 1.2rem;
+    text-decoration: underline;
+    color: rgb(0, 123, 255);
+}
 
 /**contact**/
 .contact{
@@ -506,15 +516,18 @@ input:valid~label{
     color: var(--main-color);
     font-weight: 600;
 }
-button{
+.s-btn{
     background-color: var(--main-color);
-    padding-inline: 5px;
+    padding-inline: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 5px;
     border: 1px solid var(--main-color);
     font-size: 20px;
     cursor: pointer;
     color: var(--text-color);
 }
-button:hover{
+.s-btn:hover{
     background:transparent;
     border: 1px solid var(--main-color);
 }
@@ -585,6 +598,10 @@ button:hover{
         --h2-font:3.1rem;
         --p-font:1rem;
     }
+    .resume-img{
+        width: 200px;
+        height: 200px;
+    }
 }
 
 @media (max-width:1060px){
@@ -609,9 +626,7 @@ button:hover{
     .projects-item{
         grid-template-columns: repeat(auto-fit,minmax(350px,auto));
     }
-    .resume{
-        grid-template-columns: 1fr;
-    }  
+    
 }
 @media (max-width:870px){
     #menu-icon{
@@ -624,6 +639,10 @@ button:hover{
         justify-content: space-between;
         margin-top: 10px;
         transition: all .50s ease;
+    }
+    .resume-img{
+        width: 200px;
+        height: 200px;
     }
     
     
@@ -650,6 +669,31 @@ button:hover{
     .in h4{
         font-size:20px;
     }
+    .skills-box{
+        padding: 2px;
+    }
+    .skill-icon{
+        width: 80px;
+        height: 80px;
+    }
+    .card-container{
+        margin-inline-start: 100px;
+    }
+    .skills-cards::after{
+        margin-left: 39px;
+    }
+    .card-content{
+        font-size: 16px;
+    }
+    .resume{
+        display: flex;
+        gap: 20px;
+        padding-top: 50px;
+    }
+    .resume-img{
+        display: none;
+    }
+   
 }
 
 @media(max-width:460px){
