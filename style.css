@@ -633,12 +633,22 @@ input:valid~label{
         display: block;
     }
     header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         background-color: black;
+        border-bottom: 0.1px solid white;
     }
     .navlist{   
         justify-content: space-between;
         margin-top: 10px;
         transition: all .50s ease;
+    }
+    .navlist a{
+    
+        margin-inline: 10px;
+        text-decoration: underline;
     }
     .resume-img{
         width: 200px;
@@ -669,18 +679,24 @@ input:valid~label{
     .in h4{
         font-size:20px;
     }
+    .skills{
+        padding-inline: 10px;
+    }
+    .skills-cards{
+        padding-inline: 4px;
+    }
     .skills-box{
         padding: 2px;
     }
     .skill-icon{
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
     }
     .card-container{
-        margin-inline-start: 100px;
+        margin-inline-start: 80px;
     }
     .skills-cards::after{
-        margin-left: 39px;
+        margin-left: 30px;
     }
     .card-content{
         font-size: 16px;
