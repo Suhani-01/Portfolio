@@ -609,8 +609,7 @@ input:valid~label{
         grid-template-columns: 1fr;
     }
     .about-img{
-        text-align: center;
-        order: 2;
+        display: none;
     }
     .about-img img{
         padding-inline: 3rem;
