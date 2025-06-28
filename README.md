@@ -1,2 +1,43 @@
-visit :  https://suhani-01.github.io/Portfolio/
-(PENDING UPDATES)
+# 🌐 Suhani's Portfolio
+
+This is my personal portfolio website built using HTML, CSS, and JavaScript.  
+It showcases who I am, what I do, and some of the projects I've worked on.
+
+🔗 **Live Site:** [https://suhani-01.github.io/Portfolio/](https://suhani-01.github.io/Portfolio/)
+
+---
+
+## 📁 Sections Included
+
+- 🧑‍💻 About Me  
+- 🛠️ Skills  
+- 📂 Projects  
+- 📫 Contact  
+
+---
+
+## 🚧 Status
+
+**Note:** This portfolio is still a work in progress (PENDING UPDATES).  
+More sections and styling improvements will be added soon.
+
+---
+
+## 🛠️ Built With
+
+- HTML  
+- CSS  
+- JavaScript  
+- Git & GitHub  
+- Hosted via GitHub Pages
+
+---
+
+## 📬 Connect With Me
+
+- GitHub: [@suhani-01](https://github.com/suhani-01)
+
+---
+
+✨ Thanks for visiting!
+
