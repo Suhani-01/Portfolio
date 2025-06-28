@@ -33,11 +33,5 @@ More sections and styling improvements will be added soon.
 
 ---
 
-## 📬 Connect With Me
-
-- GitHub: [@suhani-01](https://github.com/suhani-01)
-
----
-
 ✨ Thanks for visiting!
 
