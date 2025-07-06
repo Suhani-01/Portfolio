@@ -463,80 +463,10 @@ span{
     color: rgb(0, 123, 255);
 }
 
-/**contact**/
-.contact{
-    background-color: var(--secont-bg-color);
-}
-
-
-.contact h2{
-    font-size: var(--h2-font);
-    font-weight: 800;
-    margin-bottom :5px ;
-    text-align: center;
-}
-.hero{
-    width:100%;
-    height:500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-form{
-    width: 90%;
-    max-width: 600px;
-}
-.input-group{
-    margin-bottom: 30px;
-    position: relative;
-    background: var(--second-color);
-}
-input,textarea{
-    width: 100%;
-    padding:10px;
-    outline: 0;
-    border: 1px silid #ffffff;
-    color: #070404;
-    font-size: 15px;
-}
-label{
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 10px;
-    color: var(--bg-color);
-    cursor: text;
-    transition: 0.2s;
-}
-input:focus~label,
-input:valid~label{
-    top: -35px;
-    color: var(--main-color);
-    font-weight: 600;
-}
-.s-btn{
-    background-color: var(--main-color);
-    padding-inline: 8px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    border-radius: 5px;
-    border: 1px solid var(--main-color);
-    font-size: 20px;
-    cursor: pointer;
-    color: var(--text-color);
-}
-.s-btn:hover{
-    background:transparent;
-    border: 1px solid var(--main-color);
-}
-
-
 /***************End Section****************/
 .end-section{
-    padding: 80px 19% 70px;
-    background:var(--bg-color);
+    padding: 40px 19% 40px;
+    background:var(--secont-bg-color);
     display:flex;
     align-items:center;
     flex-direction: column;
