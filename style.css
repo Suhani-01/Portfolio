@@ -6,9 +6,9 @@
   box-sizing: border-box;
   text-decoration: none;
   scroll-behavior: smooth;
-  overflow-x: hidden;
   border: none;
   outline: none;
+  overflow-x: hidden;
   font-family: sans-serif;
 }
 
@@ -25,7 +25,7 @@
   --links:	#2087F5; /**/
   --card-color:#3B5A7A; /**/
 
-
+  --line-color:#1E293B;
   --main-color:#3191f7;
   --bg-color: #f8f8f8;
   --secont-bg-color: #2c2c2c;
@@ -64,7 +64,7 @@
   --secont-bg-color: #2c2c2c;
   --muted-text2:rgb(132, 132, 132);
   
-
+  --line-color:#1E293B;
   --h1-font: 7rem;
   --h2-font: 3.5rem;
   --p-font: 1.1rem;
@@ -134,7 +134,9 @@ header.scrolled .navlist a{
 
 section {
   padding: 120px 19% 100px;
+  overflow: hidden;
 }
+
 .home {
   position: relative;
   min-height: 100vh;
@@ -310,7 +312,9 @@ span {
   align-items: center;
   gap: 2.2rem;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 .about2-box {
   width: auto;
@@ -320,16 +324,16 @@ span {
   border-radius: 2rem;
   border: 3px solid transparent;
   cursor: pointer;
+  overflow: hidden;
   transition: all ease 0.5s;
-  box-shadow: 0 20px 25px -5px rgba(255, 255, 255, 0.1),
-              0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 6px 8px rgba(0,0,0,0.2);
 }
 
 .about2 h3 {
   font-size: 23px;
   font-weight: 700;
   margin-bottom: 12px;
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--line-color);
 }
 .about2 p {
   color: var(--muted-text);
@@ -400,28 +404,83 @@ span {
 .card {
   display: flex;
   justify-content: start;
+
+
 }
+
 
 .text-center {
   text-align: center;
   color: var(--text-color);
 }
 .card-container {
+  position: relative;
   margin-inline-start: 160px;
   border: 1px solid var(--card-color);
   width: 100%;
   margin-bottom: 30px;
   background-color: #ebf3ff;
-  color: black;
+  
   border-radius: 10px;
   padding: 10px;
   font-size: 18px;
+  overflow: hidden;
+  transition: transform ease 0.3s;
 }
-
+.skills-hover{
+  z-index: -1;
+  position: absolute;
+  height: 160px;
+  width: 160px;
+  transform: rotate(-100deg);
+  right: -5px;
+  top: -14px;
+  opacity: 0%;
+  transition: opacity ease 0.6s;
+}
+.card-container:hover .skills-hover{
+  opacity: 80%;
+}
+.card-container:hover{
+  transform: scale(1.02);
+}
+.card-container h3{
+  color: black;
+}
 .card-content {
-  margin-top: 10px;
-  padding-left: 20px;
-  color: var(--secont-bg-color);
+  color: black;
+  padding-top: 10px;
+  padding-left: 14px;
+}
+.app-icons{
+  display: flex;
+  gap: 10px;
+  padding: 15px 10px;
+  padding-left: 10px;
+  overflow: hidden;
+}
+.app-icons div{
+ 
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--hover-color);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all ease 0.5s;
+  box-shadow: 0 4px 8px rgba(0, 149, 255, 0.56);
+}
+.app-icons div:hover{
+  transform: translateY(-5px);
+}
+.app-icons div i{
+  transform: scale(1.5);
+}
+.profiles{
+  display: flex;
+  align-items: center;
 }
 .skill-icon {
   z-index: 1;
@@ -461,9 +520,9 @@ span {
   gap: 2.2rem;
   justify-content: space-evenly;
   text-align: center;
-  margin-top: 4rem;
+  padding-top: 4rem;
 }
-.projects-box {
+.projects-item a{
   position: relative;
   overflow: hidden;
   height: 300px;
@@ -473,7 +532,9 @@ span {
   border: 2px solid var(--card-color);
   cursor: pointer;
   transition: all ease 0.5s;
+
 }
+
 .projects-item img {
   width: 100%;
   height: auto;
@@ -484,13 +545,14 @@ span {
   position: absolute;
   top: 150%;
   left: 0;
-  color: white;
-  padding: 10px 15px;
-  border-top: 2px solid white;
-  padding-top: 20px;
+  color: var(--text-color);
+  padding: 30px 15px;
+  border-top: 2px solid var(--hover-color);
+  border-radius: 20px;
+
   text-align: center;
   width: 100%;
-  height: 50%;
+  height: fit-content;
   background: linear-gradient(var(--primary-color), var(--links));
   opacity: 0.8;
   transition: top 0.4s ease;
@@ -507,7 +569,7 @@ span {
   margin-bottom: 12px;
 }
 
-.projects-box:hover {
+.projects-item a:hover {
   transform: translateY(-8px);
   border: 1px solid var(--hover-color);
 }
@@ -524,18 +586,28 @@ span {
 .s-btnn:hover{
     color: var(--bg-color);
 }
-.visit-button {
+.visit-button a{
+  color: white;
+}
+.visit-button{
+  font-size: 20px;
+  margin: 20px 0px;
+  cursor: pointer;
   background-color: var(--main-color);
-  padding: 10px 20px;
-  margin-top: 14px;
-  border-radius: 15px;
-  border: 2px solid var(--card-color);
-  transition: all ease 0.5s;
+  border-radius: 1rem;
+  border: 2px solid var(--main-color);
+  padding: 5px 15px;
+  transition: all ease 0.4s;
 }
 
 .visit-button:hover {
-  background-color: transparent;
+  background: transparent;
   transform: scale(1.1);
+  color: var(--hover-color);
+  border: 2px solid var(--main-color);
+}
+.visit-button:hover a{
+  color: var(--hover-color);
 }
 
 .project-heading{
@@ -587,8 +659,9 @@ span {
   align-items: center;
 }
 .right-resume{
+  overflow: visible;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 .right-resume h2 {
   
@@ -598,11 +671,12 @@ span {
   margin-bottom: 5px;
 }
 .right-resume a button {
-  color: var(--text-color);
+  color: white;
   font-size: 20px;
   margin: 20px 0px;
+  cursor: pointer;
   background-color: var(--main-color);
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   border: 2px solid var(--main-color);
   padding: 5px 15px;
   transition: all ease 0.4s;
@@ -610,7 +684,7 @@ span {
 .right-resume a button:hover {
   background: transparent;
   transform: scale(1.1);
-  color: var(--text-color);
+  color: var(--hover-color);
   border: 2px solid var(--main-color);
 }
 .right-resume p {
@@ -624,6 +698,12 @@ span {
   font-size: 1.2rem;
   text-decoration: underline;
   color: rgb(0, 123, 255);
+}
+.gear{
+  transition: all ease 0.8s;
+}
+.resume:hover .gear{
+  transform: rotate(40deg);
 }
 
 /***************End Section****************/
@@ -650,24 +730,32 @@ span {
 .end-icons {
   margin-top: 10px;
 }
+.end-icons{
+  overflow: visible;
+}
 .end-section i {
   height: 40px;
   width: 40px;
-  background-color: var(--main-color);
+  background-color: var(--hover-color);
   color: white;
   border:2px solid var(--hover-color);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 20px;
+  
   border-radius: 50%;
   margin: 0 4px;
   transition: all ease 0.5s;
 }
 .end-section i:hover {
   transform: translateY(-5px);
+  color: var(--hover-color);
   background: transparent;
 }
+
+
+/*media-queries*/
 
 @media (max-width: 1600px) {
   header {
