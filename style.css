@@ -6,6 +6,7 @@
   box-sizing: border-box;
   text-decoration: none;
   scroll-behavior: smooth;
+  overflow-x: hidden;
   border: none;
   outline: none;
   font-family: sans-serif;
