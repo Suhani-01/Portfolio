@@ -479,7 +479,7 @@ span {
   color: black;
 }
 .card-content {
-  color: black;
+  color: var(--muted-text);
   padding-top: 10px;
   padding-left: 14px;
 }
@@ -923,6 +923,9 @@ span {
   .in h4 {
     font-size: 20px;
   }
+  .about2-item, .projects-item{
+    gap: 60px;
+  }
   .skills {
     padding-inline: 10px;
   }
@@ -953,6 +956,7 @@ span {
   .resume-img {
     display: none;
   }
+  
 }
 
 @media (max-width: 460px) {
@@ -974,22 +978,30 @@ span {
   }
   .about2-box{
     margin-inline: auto;
-    width: 370px;
+    width: 340px;
     height: 280px;
     padding: 40px 10px;
   }
-
-  .project-card{
-    height:360px;
-    width: 370px;
+  .about2-box h3{
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+  }
+  .about2-box p{
+    line-height: 20px;
   }
 
+  .project-card{
+    height:370px;
+    width: 340px;
+  }
 
   .image-txt{
+    overflow: hidden;
+    height: 250px;
     top:230px;
     border-radius: 0px;
     font-size: var(--p-font);
-    height: 150px;
+
   }
   .projects-item a:hover .image-txt{
     top:initial;
