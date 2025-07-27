@@ -317,6 +317,7 @@ span {
 }
 .about2-box {
   width: auto;
+  position: relative;
   opacity: 0;
   height: 300px;
   padding: 45px 20px;
@@ -326,14 +327,29 @@ span {
   cursor: pointer;
   overflow: hidden;
   transform: translateY(-60px);
-  transition: all ease 0.8s;
+  transition:transform ease 0.8s;
   box-shadow: 1px 6px 8px rgba(0,0,0,0.2);
 }
+
 .about2-box.show{
   opacity: 1;
   transform: translateY(0px);
 }
+.about-card-bg{
+  position: fixed;
+  z-index: -1;
+  filter:brightness(5);
+  transform: translate(-110%, 54%) rotate(20deg);
+  height: 250px;
 
+  opacity: 50%;
+  transition: none;
+  transition: opacity ease 0.4s;
+
+}
+.about2-box:hover .about-card-bg{
+  opacity: 100%;
+}
 .about2 h3 {
   font-size: 23px;
   font-weight: 700;
@@ -537,7 +553,7 @@ span {
   text-align: center;
   padding-top: 4rem;
 }
-.projects-item a{
+.project-card{
   position: relative;
   overflow: hidden;
   height: 300px;
@@ -546,15 +562,20 @@ span {
   border-radius: 2rem;
   border: 2px solid var(--card-color);
   cursor: pointer;
-  transition: all ease 0.5s;
-
+  transform: translateY(-60px);
+  transition: all ease 0.8s;
+  opacity: 0;
+}
+.project-card.show{
+  opacity: 1;
+  transform:translateY(0px);
 }
 
 .projects-item img {
   width: 100%;
   height: auto;
 }
-.projects-box p {
+.image-txt {
   z-index: 1;
   font-size: 18px;
   position: absolute;
@@ -564,7 +585,6 @@ span {
   padding: 30px 15px;
   border-top: 2px solid var(--hover-color);
   border-radius: 20px;
-
   text-align: center;
   width: 100%;
   height: fit-content;
@@ -584,12 +604,13 @@ span {
   margin-bottom: 12px;
 }
 
-.projects-item a:hover {
+.project-card:hover {
   transform: translateY(-8px);
   border: 1px solid var(--hover-color);
 }
+
 .projects-box:hover .image-txt {
-  top: 80%; /* adjust as needed */
+  top: 80%; 
   transform: translateY(-50%);
 }
 
@@ -951,6 +972,21 @@ span {
     word-spacing: 7px;
     width: 100%;
   }
+  .projects-item a{
+    height:360px;
+  }
+
+  .image-txt{
+    top:230px;
+    border-radius: 0px;
+    font-size: var(--p-font);
+    height: 150px;
+  }
+  .projects-item a:hover .image-txt{
+    top:initial;
+    transform: none;
+  }
+  
   .theme-switch{
     top:110px;
     right:10px;

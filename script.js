@@ -42,8 +42,6 @@ const observer=new IntersectionObserver((entries)=>{
         entry.target.classList.remove('show');  // Remove class when out of view
         }
     })
-},{
-    threshold:0.5
 })
 
 
@@ -62,4 +60,9 @@ skill_box.forEach(box=>{
 const gears=document.querySelectorAll('.gear');
 gears.forEach(gear=>{
     observer.observe(gear)
+})
+
+const projectCards=document.querySelectorAll('.project-card');
+projectCards.forEach((box)=>{
+    observer.observe(box)
 })
