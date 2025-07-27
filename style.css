@@ -972,9 +972,18 @@ span {
     word-spacing: 7px;
     width: 100%;
   }
-  .projects-item a{
-    height:360px;
+  .about2-box{
+    margin-inline: auto;
+    width: 370px;
+    height: 280px;
+    padding: 40px 10px;
   }
+
+  .project-card{
+    height:360px;
+    width: 370px;
+  }
+
 
   .image-txt{
     top:230px;
