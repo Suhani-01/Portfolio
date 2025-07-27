@@ -133,7 +133,6 @@ header.scrolled .navlist a{
 }
 
 section {
-  padding: 120px 19% 100px;
   overflow: hidden;
 }
 
@@ -313,11 +312,12 @@ span {
   gap: 2.2rem;
   text-align: center;
   margin-top: 5px;
-  padding-top: 15px;
+  padding-top: 50px;
   padding-bottom: 15px;
 }
 .about2-box {
   width: auto;
+  opacity: 0;
   height: 300px;
   padding: 45px 20px;
   background-color: var(--card-color);
@@ -325,8 +325,13 @@ span {
   border: 3px solid transparent;
   cursor: pointer;
   overflow: hidden;
-  transition: all ease 0.5s;
+  transform: translateY(-60px);
+  transition: all ease 0.8s;
   box-shadow: 1px 6px 8px rgba(0,0,0,0.2);
+}
+.about2-box.show{
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 .about2 h3 {
@@ -392,6 +397,7 @@ span {
   padding-inline: 50px;
   display: flex;
   justify-content: end;
+  overflow: visible;
 }
 
 .skills-cards {
@@ -400,11 +406,12 @@ span {
   width: 700px;
   flex-direction: column;
   gap: 20px;
+  overflow: visible;
 }
 .card {
   display: flex;
   justify-content: start;
-
+  overflow: visible;
 
 }
 
@@ -420,13 +427,21 @@ span {
   width: 100%;
   margin-bottom: 30px;
   background-color: #ebf3ff;
-  
+  opacity: 0;
+  transform: translateX(150px);
   border-radius: 10px;
   padding: 10px;
   font-size: 18px;
   overflow: hidden;
-  transition: transform ease 0.3s;
+
+  transition: transform ease 1s;
 }
+
+.card-container.show{
+  transform: translateX(0px);
+  opacity: 1;
+}
+
 .skills-hover{
   z-index: -1;
   position: absolute;
@@ -641,15 +656,19 @@ span {
   right: -15%;
   filter: brightness(10);
 }
-
 .resume-img-illu2{
   position: absolute;
   z-index: 1;
   height: 200px;
   bottom:-18%;
   left: 23%;
-
   filter: brightness(10);
+}
+.gear{
+  transition: all ease 0.8s;
+}
+.gear.show{
+  transform: rotate(40deg);
 }
 
 .resume-img {
@@ -698,12 +717,6 @@ span {
   font-size: 1.2rem;
   text-decoration: underline;
   color: rgb(0, 123, 255);
-}
-.gear{
-  transition: all ease 0.8s;
-}
-.resume:hover .gear{
-  transform: rotate(40deg);
 }
 
 /***************End Section****************/

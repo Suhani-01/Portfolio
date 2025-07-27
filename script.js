@@ -32,3 +32,34 @@ window.addEventListener("scroll",function(){
         header.classList.remove("scrolled");
     }
 })
+
+//when box enter viewport
+const observer=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){  
+            entry.target.classList.add('show');
+        } else {
+        entry.target.classList.remove('show');  // Remove class when out of view
+        }
+    })
+},{
+    threshold:0.5
+})
+
+
+
+const about2_box=document.querySelectorAll('.about2-box');
+about2_box.forEach(box => {
+    observer.observe(box);
+});
+
+const skill_box=document.querySelectorAll('.card-container');
+
+skill_box.forEach(box=>{
+    observer.observe(box)
+})
+
+const gears=document.querySelectorAll('.gear');
+gears.forEach(gear=>{
+    observer.observe(gear)
+})
