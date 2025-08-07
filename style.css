@@ -34,7 +34,7 @@
   --hero-text-muted:rgb(132, 132, 132);
   --icon-bg-color:white;
   --icon-color:black;
-  --h1-font: 7rem;
+  --h1-font: 6rem;
   --h2-font: 3.5rem;
 
   --p-font: 1.1rem;
@@ -65,7 +65,7 @@
   --muted-text2:rgb(132, 132, 132);
   
   --line-color:#1E293B;
-  --h1-font: 7rem;
+  --h1-font: 6rem;
   --h2-font: 3.5rem;
   --p-font: 1.1rem;
   --image-grad:linear-gradient(rgba(15, 68, 148, 0),rgba(48, 207, 255, 0));
@@ -106,7 +106,12 @@ header.scrolled {
 
 .navlist {
   display: flex;
+  height:30px;
+  align-items: center;
   list-style: none;
+}
+.navlist li{
+  height: 100%;
 }
 
 .navlist a {
@@ -114,15 +119,19 @@ header.scrolled {
   font-size: var(--p-font);
   font-weight: 600;
   margin: 2px 40px;
-  transition: all ease 0.4s;
+  padding-inline: 4px;
+  transition: all ease 0.2s;
+  padding-bottom: 5px;
+  border-bottom: 3px solid transparent;
 }
 header.scrolled .navlist a{
   color: var(--main-color);
 }
-.navlist a:hover {
-  color: var(--main-color);
-  margin-bottom: 2 px solid var(--main-color);
+
+.navlist li a:hover{
+  border-bottom: 3px solid white;
 }
+
 
 #menu-icon {
   font-size: 42px;
@@ -134,20 +143,6 @@ header.scrolled .navlist a{
 
 section {
   overflow: hidden;
-}
-
-.home {
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  background: var(--image-grad),
-    url(image/portfolioimg.png);
-  background-color: rgba(255, 0, 0, 0.4);
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
 }
 .theme-switch {
   position: absolute;
@@ -164,6 +159,27 @@ section {
   background-color: transparent;
   border: 0px;
 }
+
+.home {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color:var(--second-color);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.home-bg{
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  height: 720px;
+  box-shadow: ;
+  z-index: 0;
+}
+
 #icon{
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -171,20 +187,25 @@ section {
   transform: scale(1);
   opacity: 1;
 }
+.hero-text{
+  position: relative;
+  z-index: 2;
+  overflow: visible;
+}
 .hero-text h3 {
   font-family: "Inter", sans-serif;
-  color: var(--hero-text-muted);
-  font-size: 22px;
-  font-weight: 600;
+  color: var(--text-color);
+  font-size: 25px;
+  font-weight: 800;
   margin-bottom: 15px;
   word-spacing: 10px;
 }
 .hero-text b{
-    color: var(--hero-text);
+    color: var(--main-color);
 }
 .hero-text h1 {
   font-size: var(--h1-font);
-  color: var(--hero-text);
+  color: var(--main-color);
   font-weight: 800;
   margin-bottom: 20px;
   letter-spacing: 2px;
@@ -193,25 +214,35 @@ section {
 .hero-text h4 {
   width: 80%;
   font-family: "Inter", sans-serif;
-  color: var(--hero-text-muted);
+  color: var(--text-color);
   font-size: 25px;
   font-weight: 600;
-  word-spacing: 15px;
+  word-spacing: 10px;
   margin-bottom: 3.5rem;
+}
+.button-container{
+  overflow: visible;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
 .btn {
-  display: inline-block;
-  padding: 16px 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:14px 40px;
   background-color: var(--main-color);
   color: var(--hero-text);
   font-weight: 600;
   border: 2px solid var(--main-color);
-  transition: all ease 0.5s;
+  border-radius: 8px;
+  transition: all ease 0.3s;
 }
 .btn:hover {
-  transform: translate(5px);
+  transform: scale(1.03);
   background: transparent;
+  color: var(--main-color);
   border: 2px solid var(--main-color);
 }
 
@@ -265,13 +296,23 @@ header.sticky {
   z-index: 1;
   filter: brightness(0) invert(1);
 }
-
+.about-img{
+  border: 3px solid var(--main-color);
+  aspect-ratio: 1/1;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 50%;
+}
 .about-img img {
   position: relative;
   z-index: 4;
-  padding-inline: 3rem;
-  width: auto;
-  height: 400px;
+  padding: 0;
+  margin: 0;
+  left: -2px;
+  top:-2px;
+ 
+  border-radius: 50%;
+  height: 350px;
 }
 .about-text h2 {
   font-size: var(--h2-font);
@@ -323,7 +364,7 @@ span {
   padding: 45px 20px;
   background-color: var(--card-color);
   border-radius: 2rem;
-  border: 3px solid transparent;
+  border: 2px solid var(--main-color);
   cursor: pointer;
   overflow: hidden;
   transform: translateY(-60px);
@@ -354,7 +395,7 @@ span {
   font-size: 23px;
   font-weight: 700;
   margin-bottom: 12px;
-  border-bottom: 2px solid var(--line-color);
+  border-bottom: 2px solid var(--main-color);
 }
 .about2 p {
   color: var(--muted-text);
@@ -373,7 +414,6 @@ span {
 }
 .about2-box:hover {
   transform: translateY(-8px);
-  border: 1px solid var(--hover-color);
 }
 
 .text-center h2 {
@@ -428,6 +468,7 @@ span {
   display: flex;
   justify-content: start;
   overflow: visible;
+  
 
 }
 
@@ -449,7 +490,7 @@ span {
   padding: 10px;
   font-size: 18px;
   overflow: hidden;
-
+  border: 2px solid var(--main-color);
   transition: transform ease 1s;
 }
 
@@ -472,9 +513,7 @@ span {
 .card-container:hover .skills-hover{
   opacity: 80%;
 }
-.card-container:hover{
-  transform: scale(1.02);
-}
+
 .card-container h3{
   color: black;
 }
@@ -516,18 +555,19 @@ span {
 .skill-icon {
   z-index: 1;
   position: absolute;
-  border: 2px solid white;
+  border: 2px solid var(--main-color);
   height: 90px;
   width: 90px;
   border-radius: 50%;
+  background-color: var(--main-color);
   box-shadow: 1px 1px 7px 0 rgba(138, 136, 136, 0.3);
 }
 .skills-cards::after {
   content: "";
   position: absolute;
-  width: 2px;
+  width: 3px;
   height: 100%;
-  background: white;
+  background: var(--main-color);
   top: 0;
   margin-left: 42px;
   z-index: 0;
@@ -622,29 +662,10 @@ span {
 .s-btnn:hover{
     color: var(--bg-color);
 }
-.visit-button a{
-  color: white;
-}
 .visit-button{
-  font-size: 20px;
-  margin: 20px 0px;
-  cursor: pointer;
-  background-color: var(--main-color);
-  border-radius: 1rem;
-  border: 2px solid var(--main-color);
-  padding: 5px 15px;
-  transition: all ease 0.4s;
+  overflow: visible;
 }
 
-.visit-button:hover {
-  background: transparent;
-  transform: scale(1.1);
-  color: var(--hover-color);
-  border: 2px solid var(--main-color);
-}
-.visit-button:hover a{
-  color: var(--hover-color);
-}
 
 .project-heading{
     text-align: center;;
@@ -704,29 +725,16 @@ span {
   z-index: 3;
 }
 .right-resume h2 {
-  
   font-size: var(--h2-font);
   color: var(--text-color);
   font-weight: 800;
   margin-bottom: 5px;
 }
-.right-resume a button {
-  color: white;
-  font-size: 20px;
-  margin: 20px 0px;
-  cursor: pointer;
-  background-color: var(--main-color);
-  border-radius: 1rem;
-  border: 2px solid var(--main-color);
-  padding: 5px 15px;
-  transition: all ease 0.4s;
+.right-resume a{
+  width: 200px;
+  margin-bottom: 10px;
 }
-.right-resume a button:hover {
-  background: transparent;
-  transform: scale(1.1);
-  color: var(--hover-color);
-  border: 2px solid var(--main-color);
-}
+
 .right-resume p {
   color: var(--muted-text);
   font-size: var(--p-font);
@@ -734,17 +742,12 @@ span {
 }
 
 
-.right-resume a {
-  font-size: 1.2rem;
-  text-decoration: underline;
-  color: rgb(0, 123, 255);
-}
 
 /***************End Section****************/
 .end-section {
   position: relative;
   z-index:10;
-  padding: 20px 19% 20px;
+  padding:60px;
   background: var(--second-color);
   display: flex;
   align-items: center;
@@ -770,7 +773,7 @@ span {
 .end-section i {
   height: 40px;
   width: 40px;
-  background-color: var(--hover-color);
+  background-color: var(--main-color);
   color: white;
   border:2px solid var(--hover-color);
   display: inline-flex;
@@ -801,10 +804,7 @@ span {
   section {
     padding: 100px 5% 80px;
   }
-  .about-img img {
-    width: 400px;
-    height: 300px;
-  }
+
 
 }
 
@@ -816,6 +816,11 @@ span {
     --h1-font: 5rem;
     --h2-font: 3.1rem;
     --p-font: 1rem;
+  }
+  .home-bg{
+    right:-150px;
+    height: 600px;
+    top: -4px;
   }
   .resume-img {
     width: 200px;
@@ -834,6 +839,9 @@ span {
 @media (max-width: 1060px) {
   h2{
     text-align: center;
+  }
+  .home-bg{
+    opacity: 50%;
   }
   .about {
     grid-template-columns: 1fr;
@@ -862,6 +870,9 @@ span {
   }
 }
 @media (max-width: 870px) {
+  .lighttheme,.darktheme {
+    --h1-font: 5rem;
+  }
   #menu-icon {
     display: block;
   }
@@ -884,6 +895,33 @@ span {
   }
   .skills-image-design3{
     height: 100px;
+  }
+  .hero-text{
+    text-align: center;
+  }
+  .home{
+    height: 100vh;
+    display: flex;
+    align-items: end;
+    padding-bottom: 30px;
+  }
+  .home-bg{
+    opacity: 100%;
+    height: 410px;
+    right:0px;
+    top:70px;
+  }
+  .hero-text h3{
+    margin-bottom: 0px;
+  }
+  .hero-text h4 {
+    margin-bottom: 20px;
+    word-spacing: 5px;
+    width: 100%;
+  }
+  .button-container{
+    width: 100%;
+    justify-content: center;
   }
   .resume-img-illu1{
     top:-19%;
@@ -914,6 +952,7 @@ span {
     word-spacing: 10px;
     margin-bottom: 30px;
   }
+  
   .btn {
     padding: 10px 35px;
   }
@@ -968,13 +1007,14 @@ span {
   .navlist {
     padding-inline: 1%;
   }
-  .hero-text{
-    text-align: center;
+  .home-bg{
+    height:350px;
   }
-  .hero-text h4 {
-    font-size: 16px;
-    word-spacing: 7px;
-    width: 100%;
+  
+
+  
+  .button-container{
+    flex-direction: column;
   }
   .about2-box{
     margin-inline: auto;
