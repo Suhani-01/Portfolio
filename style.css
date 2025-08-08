@@ -150,6 +150,7 @@ header.scrolled .navlist a{
   padding: 0;
   width: 35px;
   color: white;
+  overflow: hidden;
   font-size: 30px;
   border-radius: 50%;
   cursor: pointer;
