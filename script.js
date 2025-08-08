@@ -62,7 +62,8 @@ gears.forEach(gear=>{
     observer.observe(gear)
 })
 
-const projectCards=document.querySelectorAll('.project-card');
-projectCards.forEach((box)=>{
-    observer.observe(box)
+
+const projectCard=document.querySelectorAll('.project-box');
+projectCard.forEach(card=>{
+    observer.observe(card)
 })
