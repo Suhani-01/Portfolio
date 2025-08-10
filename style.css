@@ -24,7 +24,7 @@
   --card-color:#1E293B; /**/
   --links:	#2087F5; /**/
   --card-color:#3B5A7A; /**/
-
+    --h4-font:25px;
   --line-color:#1E293B;
   --main-color:#3191f7;
   --bg-color: #f8f8f8;
@@ -63,7 +63,7 @@
   --bg-color: #f8f8f8;
   --secont-bg-color: #2c2c2c;
   --muted-text2:rgb(132, 132, 132);
-  
+  --h4-font:25px;
   --line-color:#1E293B;
   --h1-font: 6rem;
   --h2-font: 3.5rem;
@@ -154,13 +154,15 @@ header.scrolled .navlist a{
   font-size: 30px;
   border-radius: 50%;
   cursor: pointer;
-  overflow:hidden;
   background-color: var(--second-color);
   padding: 8px;
   height: 45px;
   width: 45px;
   color: var(--text-color);
   border: 0px;
+}
+.theme-switch i{
+  overflow: hidden;
 }
 
 .home {
@@ -217,12 +219,12 @@ header.scrolled .navlist a{
   width: 80%;
   font-family: "Inter", sans-serif;
   color: var(--text-color);
-  font-size: 25px;
+  font-size: var(--h4-font);
   font-weight: 600;
   word-spacing: 10px;
-  margin-bottom: 3.5rem;
 }
 .button-container{
+  margin-top: 60px;
   overflow: visible;
   display: flex;
   flex-direction: row;
@@ -323,12 +325,10 @@ header.sticky {
   position: relative;
   z-index: 3;
 }
-.about-text h5 {
-  position: relative;
-  z-index: 4;
-  font-size: 22px;
-  margin-bottom: 20px;
-  line-height: 1.4;
+.about-text h4{
+  font-size:var(--h4-font);
+  line-height: 34px;
+  padding-bottom: 20px;
 }
 span {
   color: var(--main-color);
@@ -354,24 +354,49 @@ p{
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   gap: 2.2rem;
-  text-align: center;
+  
   margin-top: 5px;
   padding-top: 50px;
   padding-bottom: 15px;
 }
+.about2-item h3{
+  text-align: center;
+}
+.about2-content{
+  width:90%;
+  margin-inline: auto;
+  text-align: center;
+  margin-top: 16px;
+
+}
+.about2-content li p{
+  margin-bottom: 0px;
+  line-height: var(--p-font);
+  padding-bottom: 5px;
+}
+.about2-content > p{
+  padding-bottom:10px;
+  line-height: calc(var(--p-font)+2%);
+}
+.about2-content div> p{
+  padding-bottom:10px;
+  line-height: calc(var(--p-font)+2%);
+}
+
+
 .about2-box {
   width: auto;
   position: relative;
   opacity: 0;
   height: 300px;
-  padding: 45px 20px;
+  padding: 30px 20px;
   background-color: var(--second-color);
   border-radius: 2rem;
-  border: 2px solid var(--main-color);
+  border: 2px solid transparent;
   cursor: pointer;
   overflow: hidden;
   transform: translateY(-60px);
-  transition: transform 1s ease, opacity 2s ease;
+  transition: transform 0.8s ease, opacity 2s ease,border 0.3s ease;
   box-shadow: 1px 6px 8px rgba(0,0,0,0.2);
 }
 
@@ -380,33 +405,34 @@ p{
   transform: translateY(0px);
 }
 .about-card-bg{
-  position: fixed;
+  position: absolute;
   z-index: -1;
   filter:brightness(5);
-  transform: translate(-110%, 54%) rotate(20deg);
-  height: 250px;
-
+  left: -150px;
+  height:  180px;
+  transform: rotate(20deg);
   opacity: 50%;
+  top:210px;
   transition: none;
   transition: opacity ease 0.4s;
 
 }
+
 .about2-box:hover .about-card-bg{
   opacity: 100%;
 }
 h3 {
   font-size: 23px;
   font-weight: 700;
-  margin-bottom: 12px;
 }
 .about2-box h3{
   border-bottom: 2px solid var(--main-color);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 .about2 p {
-  color: var(--muted-text);
-  font-size: var(--p-font);
-  line-height: 30px;
-  margin-bottom: 0.5rem;
+  color: var(--muted-text);  
+  margin-bottom: 0.4rem;
 }
 
 .about2 a {
@@ -419,6 +445,7 @@ h3 {
 }
 .about2-box:hover {
   transform: translateY(-8px);
+  border: 2px solid var(--main-color);
 }
 
 .text-center h2 {
@@ -488,12 +515,12 @@ h3 {
   background-color: var(--primary-color);
   opacity: 0;
   transform: translateX(150px);
-  border-radius: 10px;
+  border-radius: 1.2rem;
   padding: 10px;
   font-size: 18px;
   overflow: hidden;
-  border: 2px solid var(--main-color);
-  transition: transform ease 1s;
+  border: 2px solid transparent;
+  transition: transform 1.4s ease, border 0.3s ease;
 }
 
 .card-container.show{
@@ -510,7 +537,10 @@ h3 {
   right: -5px;
   top: -14px;
   opacity: 0%;
-  transition: opacity ease 0.6s;
+  transition: opacity ease 0.4s;
+}
+.card-container:hover{
+  border: 2px solid var(--main-color);
 }
 .card-container:hover .skills-hover{
   opacity: 80%;
@@ -521,11 +551,13 @@ h3 {
   padding-top: 10px;
   padding-left: 14px;
 }
+.card-content li{
+  font-size: var(--p-font);
+}
 .app-icons{
   display: flex;
   gap: 10px;
   padding: 15px 10px;
-  padding-left: 10px;
   overflow: hidden;
 }
 .app-icons div{
@@ -586,12 +618,17 @@ h3 {
 }
 .projects>a{
   cursor: pointer;
+  margin-top: 20px;
 }
-.text-center>p{
-  line-height: 15px;
+.text-center>h2{
+  margin-bottom: 0px;
+}
+.text-center h4{
+  font-size: var(--h4-font);
   color: var(--muted-text);
-  overflow: visible;
+
 }
+
 .projects-item{
   width: 90%;
   margin-top: 40px;
@@ -614,12 +651,17 @@ h3 {
   justify-content: center;
   flex-direction: row;
   height:310px;
+  border: 2px solid transparent;
   transform: translateY(-50px);
-  transition: transform 1s ease, opacity 2s ease;
+  transition: transform 1s ease, opacity 2s ease , border 0.4s ease;
 }
+
 .project-box.show{
   opacity: 100%;
   transform: translateY(0px);
+}
+.project-box:hover{
+  border: 2px solid var(--main-color);
 }
 .project-image{
   position:relative;
@@ -779,15 +821,15 @@ h3 {
   flex-direction: column;
   text-align: center;
 }
-.end-section h3 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
+ .end-section h4{
+  font-size: var(--h4-font);
+  padding-bottom: 10px;
+ }
 .end-section p {
   color: var(--other-color);
-  font-size: 15px;
-  line-height: 20px;
+  font-size: var(--p-font);
+  line-height: 18px;
+  margin-bottom: 4px;
 }
 .end-icons {
   margin-top: 10px;
@@ -815,10 +857,7 @@ h3 {
   color: var(--hover-color);
   background: transparent;
 }
-.end-section p{
-  line-height: 18px;
-  margin-bottom: 4px;
-}
+
 
 
 /*media-queries*/
@@ -860,6 +899,9 @@ h3 {
     left: 0;
     bottom: 30%;
   }
+  .about2-item {
+  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+}
   .skills-image-design3{
     bottom: 100px;
   }
@@ -892,15 +934,10 @@ h3 {
     opacity: 0;
   }
   
-  .about2-item {
-    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
-  }
+
   .skills-item {
     grid-template-columns: repeat(auto-fit, minmax(350px, auto));
-  }
-  .projects-item {
-    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
-  }
+  } 
   .right-resume{
     display: flex;
     flex-direction: column;
@@ -949,10 +986,8 @@ h3 {
     text-align: center;
   }
   .home{
-    height: auto;
     display: flex;
     align-items: flex-end;
-    padding-bottom: 60px;
   }
   .home-bg{
     opacity: 100%;
@@ -964,13 +999,17 @@ h3 {
     margin-bottom: 0px;
   }
   .hero-text h4 {
-    margin-bottom: 20px;
+    margin-bottom: 3px;
     word-spacing: 5px;
     width: 100%;
+  }
+  .hero-text h1{
+    margin-bottom: 8px;
   }
   .button-container{
     width: 100%;
     justify-content: center;
+    margin-top: 40px;
   }
   .resume-img-illu1{
     top:-19%;
@@ -1026,12 +1065,55 @@ h3 {
     --h2-font: 2.7rem;
     --p-font: 15px;
   }
-  .hero-text h4 {
-    font-size: 18px;
-    word-spacing: 10px;
-    margin-bottom: 30px;
+  section{
+    padding-top: 95px;
+    padding-bottom: 95px;
   }
-  
+  .about-card-bg{
+    left:-44%;
+    height: 130px;
+    top:72%;
+  }
+  .about2{
+    padding-top: 0px;
+  }
+  .about{
+    padding-bottom: 0px;
+  }
+
+  .home-bg{
+    height:350px;
+  }
+  .skills-hover{
+   height: 100px;
+   width: 100px;
+   top:-15px;
+   right: -20px;
+
+  }
+  .bg-image-design1{
+    height: 200px;
+    top:-50px;
+  }
+  .about2-content{
+    width: 100%;
+  }
+  .about2-box>h3{
+    margin-bottom: 0px;
+  }
+  .about2-content div>p{
+    padding-bottom: 0px;
+  }
+  #projects{
+    padding-inline: 20px;
+  }
+  .project-box{
+    width: 95%;
+  }
+  .about2-content > p{
+    padding-bottom:5px;
+    line-height: calc(var(--p-font)+2%);
+  }
   .btn {
     padding: 10px 35px;
   }
@@ -1044,18 +1126,23 @@ h3 {
   .about2-item, .projects-item{
     gap: 60px;
   }
+  .app-icons{
+    padding-bottom: 5px;
+    overflow: visible;
+  }
   .skills {
     padding-inline: 10px;
   }
   .skills-cards {
-    padding-inline: 4px;
+    padding-inline: 0px;
   }
   .skills-box {
     padding: 2px;
+    margin-top: 50px;
   }
   .skill-icon {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
   }
   .card-container {
     margin-inline-start: 80px;
@@ -1078,45 +1165,84 @@ h3 {
   .resume-img {
     display: none;
   }
-
+  .end-section{
+    padding-inline:20px;
+  }
   
 }
 
 @media (max-width: 460px) {
   .lighttheme , .darktheme {
-    --h1-font: 2.8rem;
+    --h1-font: 30px;
     --h2-font: 2rem;
-    --p-font:1rem;
+    --p-font:15px;
+    --h4-font:18px;
+  }
+  .theme-switch{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-text h4 {
+    word-spacing: 10px;
+    margin-bottom: 5px;
+  }
+  .about-text h4{
+    line-height: 25px;
+    overflow: visible;
+    padding-bottom: 14px;
+  }
+  #icon{
+    overflow: visible;
+    transform: scale(0.7);
+  }
+  h3{
+    font-size: 18px;
+  }
+  p{
+    line-height: 24px;
   }
   .navlist {
     padding-inline: 1%;
   }
-  .home-bg{
-    height:400px;
+  .navlist li{
+    line-height: 16px;
   }
-  
 
-  
   .button-container{
     flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
   }
-  .about2-box{
+  .button-container a{
+    width: 70%;
+  }
+  .about2-box{ 
     margin-inline: auto;
-    width: 340px;
-    height: 280px;
-    padding: 40px 10px;
+    width: 95%; 
+    height: 250px;
+    
   }
-  .about2-box h3{
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-  }
+
   .about2-box p{
     line-height: 20px;
+    font: var(--p-font);
   }
 
   .project-card{
     height:370px;
-    width: 340px;
+    width: 85%;
+  }
+  .card-container {
+    margin-inline-start: 70px;
+  
+  }
+  .app-icons{
+    gap:7px;
   }
 
   .image-txt{
@@ -1127,9 +1253,6 @@ h3 {
     font-size: var(--p-font);
 
   }
-
-  
-  
   .theme-switch{
     top:110px;
     right:10px;
@@ -1154,8 +1277,8 @@ h3 {
     font-size: 15px;
   }
   .end-section i {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     margin-inline: 2px;
   }
 

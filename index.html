@@ -16,7 +16,9 @@
 <body class="lighttheme">
     <!-------------HEADER SECTION-------------------->
     <header>
-        <a href="#" class="logo">MY_PORTFOLIO</a>
+        <a href="#" class="logo">
+            <h3>MY_PORTFOLIO</h3>
+        </a>
         <ul class="navlist">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -30,12 +32,12 @@
         <img class="home-bg" src="image/homebg.png" alt="bg" />
         <button id="theme-toggle" class="theme-switch"><i class="fas fa-moon" id="icon"></i></button>
         <div class="hero-text">
-            <h3>Hello, my name is</h3>
+            <h4>Hello, my name is</h4>
             <h1>Suhani</h1>
             <h4>A <b>Tech enthusiast</b> building with code , design and curiosity...!!!</h4>
             <div class="button-container">
                 <a href="UpdatedResume.pdf" download="SuhaniResume" class="btn dwnldme">Download Resume</a>
-                <a href="https://www.linkedin.com/in/suhani01/" class="btn " target="_blank">Linkedin</a>
+                <a href="https://www.linkedin.com/in/suhani01/" class="btn2 " target="_blank">Linkedin</a>
             </div>
         </div>
     </section>
@@ -50,17 +52,18 @@
             </div>
             <div class="about-text">
                 <h2>About Me</h2>
-                <h5>Currently I am Student at College of Engineering Roorkee pursuing <span>Bachelor of Technology
+                <h4>Currently I am Student at College of Engineering Roorkee pursuing <span>Bachelor of Technology
                     </span>in
                     <span>Computer Science and Engineering</span>
-                </h5>
+                </h4>
                 <p>I'm currently learning web development and enjoying the process of building cool websites and apps. I
                     have a good understanding of Data Structures and Algorithms, which helps me in problem-solving.
 
                     I've also participated in events like the Smart India Hackathon (SIH) and enjoy collaborating with
                     others.
                 </p>
-                <p>Strength : Team work , Logical Thinking , Time management<br>I also have interest in Artistic and
+                <p><b>Strength :</b> Team work , Logical Thinking , Time management <br><br> I also have interest in
+                    Artistic and
                     have
                     hobbies of Singing and Listening Music.</p>
             </div>
@@ -70,36 +73,66 @@
 
             <div class="about2-item">
 
+                <!----------box 1 ---------->
                 <div class="about2-box">
                     <img src="image/about_card_bg.png" alt="" class="about-card-bg" />
                     <h3>Education</h3>
-                    <p><b>Intermediate :</b> 88.4% (CBSE)</p>
-                    <P><b>High School :</b> 87.4% (CBSE)</P>
-                    <p><b>BTech(CSE) :</b> Pursuing 6th sem (UTU)</p>
+                    <div class="about2-content">
+                        <div>
+                            <p><b>Kendriya Vidyalaya No.2 Roorkee</b>
+                            <ul>
+                                <li>
+                                    <p>High School : 87.4% (CBSE)</p>
+                                </li>
+                                <li>
+                                    <p>Intermediate : 88.4% (CBSE)</p>
+                                </li>
+                            </ul>
+                            </p>
+
+                            <p><b>College Of Engineering Roorkee</b>
+                            <ul>
+                                <li>
+                                    <p>BTech(CSE) : Pursuing 6th sem (UTU)</p>
+                                </li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
 
+                <!----------box 2 ---------->
                 <div class="about2-box">
                     <img src="image/about_card_bg.png" alt="" class="about-card-bg" />
                     <h3>Experiences</h3>
-                    <p><b>Smart India Hackathon</b> 2024 Finalist</p>
-                    <p><b>Web Development </b>Internship at <a href="https://codsoft.in/" target="_blank">CodSoft</a>
-                        (2023)
-                        - <a href="https://drive.google.com/file/d/1vTmBqi5wPX8UDrNEPDg3RYBL4yGOag_7/view?usp=drivesdk"
-                            target="_blank">certificate</a> </p>
-                    <p><b>Web Development </b>Internship at <a href="https://oasisinfobyte.com//" target="_blank">Oasis
-                            Infobyte</a> (2024) </p>
+                    <div class="about2-content">
+                        <p><b>Smart India Hackathon</b> 2024 Finalist</p>
+                        <p><b>Web Development </b>Internship at <a href="https://codsoft.in/"
+                                target="_blank">CodSoft</a>
+                            (2023)
+                            - <a href="https://drive.google.com/file/d/1vTmBqi5wPX8UDrNEPDg3RYBL4yGOag_7/view?usp=drivesdk"
+                                target="_blank">certificate</a> </p>
+                        <p><b>Web Development </b>Internship at <a href="https://oasisinfobyte.com//"
+                                target="_blank">Oasis
+                                Infobyte</a> (2024) </p>
+                   
+                    </div>
                 </div>
 
+                <!----------box 3 ---------->
                 <div class="about2-box">
                     <img src="image/about_card_bg.png" alt="" class="about-card-bg" />
                     <h3>Certifications</h3>
-                    <p>GFG 160 days of Problem Solving - <b>GeeksForGeeks</b> (<a
-                            href="https://media.geeksforgeeks.org/courses/certificates/bd284b88e4fa61177e527701491cc07d.pdf"
+                    <div class="about2-content">
+                    <p>GFG 160 days of Problem Solving - <b>GeeksForGeeks</b> (
+                        <a href="https://media.geeksforgeeks.org/courses/certificates/bd284b88e4fa61177e527701491cc07d.pdf"
                             target="_blank">Certificate</a>)</p>
                     <p>Web Development Course - <b>MTA</b></p>
                     <P>Minitab(Statistical Software) Workshop - <b>IIT Roorkee</b></P>
-
+                    </div>
                 </div>
+
             </div>
             <br>
 
@@ -107,16 +140,18 @@
     </div>
 
     <!-------------------------------------skills-section------------------------------------->
-    <section class="skills">
+    <section class="skills"  id="skills">
         <img class="skills-img1" src="image/skills-illustration.png" alt="" />
         <img class="skills-image-design2" src="image/des2.png" alt="" />
         <img class="skills-image-design3" src="image/des2.png" alt="" />
         <div class="text-center">
-            <h2 id="skills">My Skills</h2>
+            <h2>My Skills</h2>
         </div>
         <div class="skills-box">
 
             <div class="skills-cards">
+
+                <!-----------Card1--------->
                 <div class="card">
                     <img alt="" class="skill-icon" src="image/dev.png">
 
@@ -142,7 +177,7 @@
 
                 </div>
 
-
+                <!-----------Card2--------->
                 <div class="card">
                     <img alt="" class="skill-icon" src="image/lang.png">
                     <div class="card-container">
@@ -177,7 +212,7 @@
                     </div>
                 </div>
 
-
+                <!-----------Card3--------->
                 <div class="card">
                     <img alt="" class="skill-icon" src="image/tools.png">
                     <div class="card-container">
@@ -204,7 +239,7 @@
                     </div>
                 </div>
 
-
+                <!-----------Card4--------->
                 <div class="card">
                     <img alt="" class="skill-icon" src="image/skills.png">
                     <div class="card-container">
@@ -224,13 +259,15 @@
         <br>
 
     </section>
+
+
     <!--------------------------------------Project section------------------------------->
 
 
     <section class="projects" id="projects">
         <div class="text-center">
-            <h2 id="skills">Projects</h2>
-            <p>Explore my recent projects</p>
+            <h2>Projects</h2>
+            <h4>Explore my recent projects</h4>
         </div>
 
 
@@ -242,8 +279,9 @@
                 <!---------Image------------>
                 <div class="project-image">
                     <img src="image/flip-and-match.png" class="main-img-project" alt="" />
-                    <a class="visit-icon" href="https://suhani-01.github.io/FlipTheCard-Game/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                    
+                    <a class="visit-icon" href="https://suhani-01.github.io/FlipTheCard-Game/" target="_blank"><i
+                            class="fas fa-external-link-alt"></i></a>
+
 
                 </div>
 
@@ -251,13 +289,16 @@
                 <div class="project-description">
                     <h3>Flip and Match</h3>
                     <p>Flip and Match is a simple memory game where players flip two cards at a time to find matching
-                        pairs. It’s built using HTML, CSS, and JavaScript. The game includes smooth flipping animations,match-checking logic, and ends when all pairs are matched. It’s responsive, interactive, and
+                        pairs. It’s built using HTML, CSS, and JavaScript. The game includes smooth flipping
+                        animations,match-checking logic, and ends when all pairs are matched. It’s responsive,
+                        interactive, and
                         great for improving focus and memory.</p>
 
-                    <a class="btn2"  href="https://github.com/Suhani-01/FlipTheCard-Game" target="_blank">View Code  <i class="fas fa-external-link-alt"></i></a> 
+                    <a class="btn2" href="https://github.com/Suhani-01/FlipTheCard-Game" target="_blank">View Code <i
+                            class="fas fa-external-link-alt"></i></a>
                 </div>
 
-        
+
             </div>
 
             <!-------------Project-2-------------->
@@ -267,20 +308,24 @@
                 <!---------Image------------>
                 <div class="project-image">
                     <img src="image/razorpay-clone.png" class="main-img-project" alt="" />
-                    <a class="visit-icon" href="https://razorpay-clone-001.netlify.app/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                    
+                    <a class="visit-icon" href="https://razorpay-clone-001.netlify.app/" target="_blank"><i
+                            class="fas fa-external-link-alt"></i></a>
+
 
                 </div>
 
                 <!---------Description------------>
                 <div class="project-description">
                     <h3>Razorpay Clone</h3>
-                    <p>A responsive Razorpay homepage clone built with HTML and Tailwind CSS. It includes a sticky header, hero section, service highlights, and adapts well across screen sizes with a clean, consistent layout.</p>
+                    <p>A responsive Razorpay homepage clone built with HTML and Tailwind CSS. It includes a sticky
+                        header, hero section, service highlights, and adapts well across screen sizes with a clean,
+                        consistent layout.</p>
 
-                    <a class="btn2"  href="https://github.com/Suhani-01/Razorpay-clone" target="_blank">View Code  <i class="fas fa-external-link-alt"></i></a> 
+                    <a class="btn2" href="https://github.com/Suhani-01/Razorpay-clone" target="_blank">View Code <i
+                            class="fas fa-external-link-alt"></i></a>
                 </div>
 
-        
+
             </div>
 
             <!-------------Project-3-------------->
@@ -290,20 +335,25 @@
                 <!---------Image------------>
                 <div class="project-image">
                     <img src="image/Paste-app.png" class="main-img-project" alt="" />
-                    <a class="visit-icon" href="https://paste-app-eta-three.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                    
+                    <a class="visit-icon" href="https://paste-app-eta-three.vercel.app/" target="_blank"><i
+                            class="fas fa-external-link-alt"></i></a>
+
 
                 </div>
 
                 <!---------Description------------>
                 <div class="project-description">
-                    <h3>Paste App</h3> 
-                    <p>A simple and fast web application built with React, Vite, Redux Toolkit, and Tailwind CSS. It allows users to create, save, and manage text pastes locally. The app includes features like duplicate prevention and smooth, responsive UI—ideal for quick note-taking or temporary text storage.</p>
+                    <h3>Paste App</h3>
+                    <p>A simple and fast web application built with React, Vite, Redux Toolkit, and Tailwind CSS. It
+                        allows users to create, save, and manage text pastes locally. The app includes features like
+                        duplicate prevention and smooth, responsive UI—ideal for quick note-taking or temporary text
+                        storage.</p>
 
-                    <a class="btn2"  href="https://github.com/Suhani-01/Paste-App" target="_blank">View Code  <i class="fas fa-external-link-alt"></i></a> 
+                    <a class="btn2" href="https://github.com/Suhani-01/Paste-App" target="_blank">View Code <i
+                            class="fas fa-external-link-alt"></i></a>
                 </div>
 
-        
+
             </div>
 
         </div>
@@ -330,7 +380,7 @@
 
     <!--------------end-section----------->
     <section class="end-section">
-        <h3>Suhani</h3>
+        <h4>Suhani</h4>
         <p>Bit by bit, byte by byte — growth never stops.</p>
         <p>suhaninegi124@gmail.com</p>
         <div class="end-icons">
