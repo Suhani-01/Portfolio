@@ -2,27 +2,34 @@ const theme=document.getElementById("theme-toggle");
 const body=document.body;
 
 let isLight=true;
-theme.addEventListener("click",()=>{
-    const icon = document.getElementById("icon");
 
-    icon.style.opacity = "0"; // fade out
+theme.addEventListener("click", () => {
+  // Fade out icon
+  icon.style.opacity = "0";
 
-    setTimeout(() => {
-        if (isLight) {
-            body.setAttribute("class", "darktheme");
-            isLight = false;
-            icon.classList.remove("fa-moon");
-            icon.classList.add("fa-sun");
-        } else {
-            body.setAttribute("class", "lighttheme");
-            isLight = true;
-            icon.classList.remove("fa-sun");
-            icon.classList.add("fa-moon");
-        }
+  setTimeout(() => {
+    if (isLight) {
+      body.classList.remove("lighttheme");
+      body.classList.add("darktheme");
 
-        icon.style.opacity = "1"; // fade in
-    }, 150); // wait a bit before fading in new icon
-})
+      icon.classList.remove("fa-moon");
+      icon.classList.add("fa-sun");
+
+      isLight = false;
+    } else {
+      body.classList.remove("darktheme");
+      body.classList.add("lighttheme");
+
+      icon.classList.remove("fa-sun");
+      icon.classList.add("fa-moon");
+
+      isLight = true;
+    }
+
+    // Fade in icon
+    icon.style.opacity = "1";
+  }, 150);
+});
 
 window.addEventListener("scroll",function(){
     const header=document.querySelector("header");
@@ -44,7 +51,8 @@ const observer=new IntersectionObserver((entries)=>{
     })
 })
 
-
+const hero_button=document.querySelector('.button-container');
+observer.observe(hero_button);
 
 const about2_box=document.querySelectorAll('.about2-box');
 about2_box.forEach(box => {
@@ -67,3 +75,9 @@ const projectCard=document.querySelectorAll('.project-box');
 projectCard.forEach(card=>{
     observer.observe(card)
 })
+
+
+const certificates=document.querySelectorAll('.certificate-card');
+certificates.forEach(cert => {
+    observer.observe(cert);
+});
