@@ -1,3 +1,20 @@
+//typed js
+var typed = new Typed('#element', {
+    strings: ['Problem Solver','Web Developer','Tech Enthusiast','Team Player','Learner'],
+    typeSpeed: 60, 
+    loop: true,
+});
+
+
+//navbar
+const toggleBtn = document.querySelector(".navbar-toggle");
+const navList = document.querySelector(".navlist");
+
+toggleBtn.addEventListener("click", () => {
+  navList.classList.toggle("active");
+});
+
+
 const theme=document.getElementById("theme-toggle");
 const body=document.body;
 
@@ -54,14 +71,16 @@ const observer=new IntersectionObserver((entries)=>{
 const hero_button=document.querySelector('.button-container');
 observer.observe(hero_button);
 
-const about2_box=document.querySelectorAll('.about2-box');
-about2_box.forEach(box => {
+const skill_box=document.querySelectorAll('.skill-box');
+skill_box.forEach(box => {
     observer.observe(box);
 });
 
-const skill_box=document.querySelectorAll('.card-container');
 
-skill_box.forEach(box=>{
+
+const skill_box2=document.querySelectorAll('.card-container');
+
+skill_box2.forEach(box=>{
     observer.observe(box)
 })
 
@@ -81,3 +100,27 @@ const certificates=document.querySelectorAll('.certificate-card');
 certificates.forEach(cert => {
     observer.observe(cert);
 });
+
+
+
+//form
+emailjs.init("-R3S2gW4k0cwCQd_V");  //public key of Email js
+
+const btn=document.getElementById('sendForm')
+
+//form submission
+document.getElementById('contact-form-data').addEventListener('submit',function(event){
+    event.preventDefault(); //prevent page refresh
+
+    btn.value='Sending..'
+    const serviceId='service_do9olwy';
+    const templateId='template_34ibeem'
+
+    emailjs.sendForm(serviceId,templateId,this).then(()=>{
+        alert("Sent")
+    },(error)=>{
+        alert("Failed")
+    });
+
+});
+
