@@ -92,7 +92,7 @@ p {
 
 section {
   padding: 90px 0px;
-
+  overflow-x: hidden;
   width: 100%;
   display: flex;
   align-items: center;
@@ -1397,6 +1397,9 @@ textarea:focus {
   .resume p{
     margin-top: 2rem;
     text-align: center;
+  }
+  .resume{
+    padding-left: 0px;
   }
 
 }
