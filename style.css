@@ -25,7 +25,7 @@
   --bg-color: #f8f8f8;
   --secont-bg-color: #2c2c2c;
   --muted-text2: rgb(132, 132, 132);
-  --sub-head:20px;
+  --sub-head: 20px;
   --p-font: 1rem;
   --image-grad: linear-gradient(black, rgba(0, 0, 0, 0.736));
 }
@@ -92,7 +92,7 @@ p {
 
 section {
   padding: 90px 0px;
-  overflow-x: hidden;
+
   width: 100%;
   display: flex;
   align-items: center;
@@ -106,7 +106,38 @@ section {
 .section-type-2 {
   background-color: var(--second-color);
 }
+.section-heading {
+  margin-bottom: 20px;
+  overflow: visible;
+}
+.section-heading h2 {
+  text-align: center;
+  color: var(--text-color);
+  font-weight: 700;
+}
+.section-heading p {
+  margin-top: 10px;
+  color: var(--muted-text2);
+  text-shadow: 0px 4px 3px rgba(101, 188, 255, 0.4),
+    0px 8px 13px rgba(38, 179, 255, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
 
+  overflow: visible;
+  text-align: center;
+  font-size: var(--sub-head);
+  animation: 4s float ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 /*********Header*********/
 header {
   position: fixed;
@@ -194,29 +225,29 @@ header.scrolled .navlist a {
   font-size: 24px;
   border-radius: 50%;
   cursor: pointer;
-  background-color: var(--second-color);
+  background-color: transparent;
   padding: 8px;
   color: var(--text-color);
-  border: 2px solid var(--main-color);
+
+  overflow: visible;
   transition: all ease 0.4s;
 }
-.theme-switch:hover {
-  background-color: transparent;
-  border: 2px solid var(--primary-color);
-}
+
 .theme-switch i {
   overflow: visible;
 }
 
 .home {
   height: 100vh;
+
   display: flex;
+  overflow: hidden;
   align-items: center;
 }
 
 .home-bg {
   position: absolute;
-  right: -10px;
+  right: 0px;
   top: -10px;
   height: 720px;
   z-index: 0;
@@ -336,18 +367,6 @@ header.scrolled .navlist a {
   overflow: visible;
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-4px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
 /*****************about****************/
 #about {
   position: relative;
@@ -372,7 +391,9 @@ header.scrolled .navlist a {
   opacity: 60%;
   z-index: 1;
 }
-
+.about {
+  height: fit-content;
+}
 .about-img {
   border: 3px solid var(--main-color);
   aspect-ratio: 1/1;
@@ -391,6 +412,10 @@ header.scrolled .navlist a {
   border-radius: 50%;
   height: 350px;
 }
+.about-text {
+  height: fit-content;
+  overflow: visible;
+}
 .about-text h2 {
   color: var(--text-color);
   font-weight: 700;
@@ -405,13 +430,14 @@ header.scrolled .navlist a {
   font-weight: 600;
   padding-bottom: 20px;
 }
-.about-text>p>b{
-    color: var(--main-color);
+.about-text > p > b {
+  color: var(--main-color);
 }
-.flow{
-    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.345);
-    overflow: visible;
-    animation: float 5s ease-in-out infinite;
+.flow {
+  text-shadow: 0px 4px 3px rgba(130, 130, 130, 0.4),
+    0px 8px 13px rgba(38, 179, 255, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
+  overflow: visible;
+  animation: float 5s ease-in-out infinite;
 }
 span {
   color: var(--main-color);
@@ -419,12 +445,15 @@ span {
 
 .about-text p {
   line-height: 25px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   position: relative;
   z-index: 4;
   color: var(--muted-text);
 }
-
+.about-text a {
+  width: 200px;
+  animation: 5s float ease-in-out infinite;
+}
 /********************skill***********************/
 
 .skills {
@@ -434,13 +463,6 @@ span {
   align-items: center;
 }
 
-.section-heading {
-  margin-bottom: 20px;
-}
-.section-heading h2 {
-  color: var(--text-color);
-  font-weight: 700;
-}
 .skill-item {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -554,21 +576,6 @@ span {
 }
 .skill-icon > img {
   height: 1.2rem;
-}
-.section-heading{
-    overflow: visible;
-}
-.section-heading h2{
-    text-align: center;
-}
-.section-heading p{
-    margin-top: 10px;
-    color: var(--muted-text2);
-    text-shadow: 0 5px 15px var(--main-color);
-    overflow: visible;
-    text-align: center;
-    font-size: var(--sub-head);
-    animation: 5s float ease-in-out infinite;
 }
 
 /***********Experience and Education section **********/
@@ -723,6 +730,7 @@ span {
   align-items: center;
   padding-bottom: 20px;
   align-items: center;
+  overflow: visible;
   background-color: var(--second-color);
 }
 
@@ -996,17 +1004,11 @@ textarea:focus {
   box-shadow: 0 10px 30px rgba(107, 203, 255, 0.341);
 }
 #sendForm {
-  padding: 10px;
-  background-color: var(--main-color);
-  color: white;
-  font-size: 18px;
-  border: 0;
+  width: 200px;
+  margin-inline: auto;
+  margin-top: 20px;
+  margin-bottom: 0px;
   cursor: pointer;
-  width: 150px;
-  margin: 20px auto 0;
-  border: 3px solid var(--main-color);
-  border-radius: 0.5rem;
-  transition: all ease 0.4s;
 }
 #sendForm:hover {
   background-color: transparent;
@@ -1064,6 +1066,7 @@ textarea:focus {
 .right-resume a {
   width: 200px;
   margin-bottom: 10px;
+  animation: 4s float ease-in-out infinite;
 }
 
 .right-resume p {
@@ -1093,10 +1096,11 @@ textarea:focus {
   color: var(--muted-text);
   font-size: var(--p-font);
   line-height: 18px;
-  margin-bottom: 14px;
+  margin-bottom: 2px;
 }
 
 .contact-icons {
+  margin-top: 20px;
   overflow: visible;
 }
 .end-section i {
@@ -1124,21 +1128,8 @@ textarea:focus {
   .home-bg {
     height: 650px;
   }
-}
-
-@media (max-width: 1200px) {
-  .home-bg {
-    height: 600px;
-  }
-  .skill-item {
-    gap: 1rem;
-  }
-  .skill-content {
-    margin: 0px;
-    width: 100%;
-  }
-  .skill-box {
-    padding: 20px 20px;
+  .about-text {
+    padding: 10px;
   }
 }
 
@@ -1173,9 +1164,6 @@ textarea:focus {
   .button-container {
     margin-top: 40px;
   }
-  .about-text {
-    padding-left: 30px;
-  }
 
   .about-text h4 {
     padding-bottom: 10px;
@@ -1195,6 +1183,21 @@ textarea:focus {
   }
   .certificate-card {
     width: 90%;
+  }
+}
+@media (max-width: 1200px) {
+  .home-bg {
+    height: 600px;
+  }
+  .skill-item {
+    gap: 1rem;
+  }
+  .skill-content {
+    margin: 0px;
+    width: 100%;
+  }
+  .skill-box {
+    padding: 20px 20px;
   }
 }
 
@@ -1221,7 +1224,6 @@ textarea:focus {
   .navbar-toggle {
     display: relative;
     z-index: 10000;
-    padding-top: 8px;
     height: 35px;
     width: 35px;
     padding-inline: 5px;
@@ -1234,7 +1236,10 @@ textarea:focus {
     cursor: pointer;
   }
   header {
+    padding-top: 15px;
+    padding-bottom: 15px;
     background-color: var(--primary-color);
+    border-bottom: 2px solid var(--main-color);
   }
   .navbar-toggle > span {
     width: 100%;
@@ -1298,6 +1303,9 @@ textarea:focus {
   .about-text {
     padding-left: 0px;
   }
+  .about-text a {
+    margin-inline: auto;
+  }
   .about h2 {
     margin-bottom: 50px;
   }
@@ -1342,6 +1350,9 @@ textarea:focus {
     align-items: center;
   }
 
+  .cert-info {
+    flex: 1;
+  }
   .project-box {
     width: 45%;
     flex-direction: column;
@@ -1362,11 +1373,14 @@ textarea:focus {
     margin-top: 10px;
     margin-inline: auto;
   }
-  .resume{
+  .resume {
     gap: 2rem;
   }
-  .resume-img{
+  .resume-img {
     height: 200px;
+  }
+  #sendForm {
+    margin-bottom: 20px;
   }
 }
 @media (max-width: 600px) {
@@ -1382,32 +1396,34 @@ textarea:focus {
   .certificate-card {
     width: 100%;
   }
-  .resume-img{
+  .cert-image {
+    width: 30%;
+    overflow: hidden;
+  }
+
+  .resume-img {
     display: none;
   }
-  .resume{
+  .resume {
+    gap: 0;
     display: flex;
   }
-  .resume h2{
+  .resume h2 {
     text-align: center;
   }
-  .resume .btn{
+  .resume .btn {
     margin-inline: auto;
   }
-  .resume p{
+  .resume p {
     margin-top: 2rem;
     text-align: center;
   }
-  .resume{
-    padding-left: 0px;
-  }
-
 }
 
 @media (max-width: 480px) {
   .theme-common {
     --p-font: 0.9rem;
-    --sub-head:16px;
+    --sub-head: 16px;
   }
   h1 {
     font-size: 7vw;
@@ -1424,11 +1440,47 @@ textarea:focus {
   p {
     font-size: 0.85rem;
   }
+  body {
+    overflow-x: hidden;
+  }
+  header{
+    padding-top:10px;
+    padding-bottom: 10px;
+    
+  }
+
   .home-bg {
     height: 340px;
   }
+  .theme-switch {
+    height: 35px;
+    width: 35px;
+  }
+  .navbar-toggle {
+    align-items: ceter;
+    justify-content: center;
+    width: 30px;
+    gap: 5px;
+  }
+  .navbar-toggle > span {
+    height: 3px;
+  }
+  .btn,
+  .btn2 {
+    font-size: 16px;
+    padding: 12px 24px;
+    border-radius: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+   .project-description a{
+    border-radius: 15px;
+   }
   .button-container {
     margin-top: 30px;
+  }
+  .heri-text{
+    margin-bottom:20px;
   }
   .hero-text .contact-icons {
     margin-top: 20px;
@@ -1436,13 +1488,17 @@ textarea:focus {
   .hero-text h4 {
     word-spacing: 5px;
   }
+  .about-text {
+    padding: 0;
+  }
   .skill-item {
     flex-direction: column;
     overflow: visible;
     gap: 2rem;
   }
   .skill-box {
-    width: 100%;
+    width: 90%;
+    height: 250px;
   }
   .exp-cards::after {
     left: 3%;
@@ -1457,7 +1513,7 @@ textarea:focus {
     padding: 0px;
   }
 
-  .certificate-container{
+  .certificate-container {
     margin-inline: 0px;
     width: 100%;
   }
@@ -1465,36 +1521,35 @@ textarea:focus {
     padding: 10px;
     gap: 5px;
   }
-  .cert-image{
-    width: 120px;
-    height: 90px;
+  .cert-image {
+    width: 100px;
+    height: 80px;
   }
-  .cert-image>img{
+  .cert-image > img {
     width: 100%;
   }
-  .cert-info{
+  .cert-info {
     flex: 1;
   }
-  .cert-info>p{
+  .cert-info > p {
     padding: 3px;
   }
-  .cert-info>p>a{
-    gap: 2px;
+  .cert-info > p > a {
+    gap: 4px;
   }
 
-  .contact-form{
+  .contact-form {
     width: 100%;
   }
-  form h4{
+  form h4 {
     margin-top: 20px;
   }
-  form>input , form>textarea{
+  form > input,
+  form > textarea {
     padding: 8px 10px;
     font-size: var(--p-font);
   }
-  #sendForm{
-    margin-bottom: 20px; 
-    padding: 10px;
-    font-size: var(--p-font)
+  .right-resume p{
+    line-height: 25px;
   }
 }
